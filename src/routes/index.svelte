@@ -23,7 +23,9 @@
 
 	$: usersBySearch = search
 		? users.filter((el) =>
-				fieldsForSearch.some((field) => el[field].toString().includes(search))
+				fieldsForSearch.some((field) =>
+					el[field].toString().toLowerCase().includes(search.toLowerCase())
+				)
 		  )
 		: users;
 
